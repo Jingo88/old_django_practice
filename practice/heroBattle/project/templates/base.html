@@ -1,0 +1,56 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'materialize/materialize.min.css' %}">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+	<title>BASENESS</title>
+	<script src="{% static 'jquery-2.2.3.min.js' %}"></script>
+	<script src="{% static 'materialize/materialize.min.js' %}"></script>
+	<script src="{% static 'main.js' %}"></script>
+</head>
+<body>
+
+	<nav>
+    <div class="nav-wrapper">
+      <a href="{% url 'heroes:index' %}" class="brand-logo">Heroes</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{% url 'heroes:login' %}">Login</a></li>
+        <li><a href="{% url 'heroes:signup' %}">Sign Up</a></li>
+        <li><a href="badges.html">Power List</a></li>
+        <li><a href="{% url 'heroes:logout' %}">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+	<div class='container'>
+		{% block content %}
+
+			<div class="row">
+				<div class="col 6 offset-s3">
+
+					<div class="row">
+						<div class="col s12 m12">
+							<div class="card blue-grey darken-1">
+								<div class="card-content white-text">
+									<p class="card-title">Hero Shizzzz</p>
+										<p>Create a user profile. Then start building your own super hero from scratch!</p>
+								</div>
+							<div class="card-action">
+								<a href="{% url 'heroes:login' %}">Log In</a>
+								<a href="{% url 'heroes:signup' %}">Register</a>
+							</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+				
+		{% endblock content %}
+	</div>
+
+</body>
+</html>

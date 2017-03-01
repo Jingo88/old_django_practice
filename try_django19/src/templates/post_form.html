@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+	{% block content %}
+	<h1>FORMMMMM</h1>
+	<form method="POST" action="">{%csrf_token%}
+
+		{{ form.as_p }}
+
+		<input type="submit" value="Create Post"/>
+	</form>
+	
+	{% endblock content %}
+
+<!-- Method = What type of HTTP Verb / CRUD we are doing -->
+<!-- Action = What url to send this to?-->
+<!-- csrf = cross site request forgery. We need security to validate data -->
+<!-- Django provides csrf token by default -->
+<!-- Block super still shows the parent block content -->

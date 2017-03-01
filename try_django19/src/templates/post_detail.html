@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{instance.title}} | {{ block.super}}{% endblock head_title%}
+
+{% block content %}
+
+	<h1>{{ title }}</h1>
+
+
+	<ul>
+		<li>{{instance.id}}</li>
+		<li>{{instance.title}}</li>
+		<li>{{instance.content}}</li>
+		<li>{{instance.timestamp}}</li>
+		<li>{{instance.updated}}</li>
+	</ul>
+
+{% endblock content %}
